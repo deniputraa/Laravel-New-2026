@@ -15,6 +15,7 @@ pipeline {
         NAMESPACE = "testing-laravel"
 
         HOST = "laravel.192.168.1.100.nip.io"
+	HOST_DRC = "laravel.10.10.10.100.nip.io"
     }
 
     stages {
@@ -133,7 +134,9 @@ pipeline {
                     -n testing-laravel \
                     --dry-run=client -o yaml | kubectl apply -f -
 
-                    kubectl apply -f k8s/
+                    kubectl apply -f k8s/deployment.yaml
+		    kubectl apply -f k8s/service.yaml
+		    kubectl apply -f k8s/ingress-dc.yaml
 
                     kubectl rollout status deployment/laravel \
                     -n testing-laravel \
@@ -185,7 +188,9 @@ pipeline {
                     -n testing-laravel \
                     --dry-run=client -o yaml | kubectl apply -f -
 
-                    kubectl apply -f k8s/
+                    kubectl apply -f k8s/deployment.yaml
+		    kubectl apply -f k8s/service.yaml
+		    kubectl apply -f k8s/ingress-drc.yaml
 
                     kubectl rollout status deployment/laravel \
                     -n testing-laravel \
@@ -205,7 +210,7 @@ pipeline {
 
                 sh """
                 sleep 20
-                curl --fail http://${HOST}
+                curl --fail http://${HOST_DRC}
                 """
 
             }
