@@ -73,7 +73,7 @@ pipeline {
                 ]) {
 
                     sh '''
-                    echo "$PASSWORD" | docker login 192.168.1.252 \
+                    echo "$PASSWORD" | docker login 192.168.1.252:80 \
                     -u "$USERNAME" \
                     --password-stdin
                     '''
