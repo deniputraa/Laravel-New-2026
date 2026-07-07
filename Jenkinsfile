@@ -14,7 +14,7 @@ pipeline {
 
         NAMESPACE = "testing-laravel"
 
-        HOST = "laravel.test.cbncloud.local"
+        HOST = "laravel.192.168.1.100.nip.io"
     }
 
     stages {
