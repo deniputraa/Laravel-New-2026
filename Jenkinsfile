@@ -6,7 +6,7 @@ pipeline {
         REPO_URL = "https://github.com/deniputraa/Laravel-New-2026.git"
         BRANCH = "main"
 
-        HARBOR = "192.168.1.252:80"
+        HARBOR = "192.168.1.252"
         PROJECT = "test-cbncloud"
         IMAGE_NAME = "laravel-new-2026"
 
@@ -73,7 +73,7 @@ pipeline {
                 ]) {
 
                     sh '''
-                    echo "$PASSWORD" | docker login 192.168.1.252:80 \
+                    echo "$PASSWORD" | docker login 192.168.1.252 \
                     -u "$USERNAME" \
                     --password-stdin
                     '''
