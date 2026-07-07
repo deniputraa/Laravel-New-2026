@@ -48,18 +48,18 @@ pipeline {
 
 	}
 
-#	kalau ada yang critical atau high stop build.
-#        stage('Trivy Scan') {
-#            steps {
-#                sh """
-#                trivy image \
-#                --exit-code 1 \
-#                --severity HIGH,CRITICAL \
-#                ${IMAGE}
-#                """
-#            }
-#        }
-
+/*	kalau ada yang critical atau high stop build.
+        stage('Trivy Scan') {
+            steps {
+                sh """
+                trivy image \
+                --exit-code 1 \
+                --severity HIGH,CRITICAL \
+                ${IMAGE}
+                """
+            }
+        }
+*/
         stage('Login Harbor') {
 
             steps {
