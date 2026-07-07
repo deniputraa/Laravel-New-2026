@@ -6,7 +6,7 @@ pipeline {
         REPO_URL = "https://github.com/deniputraa/Laravel-New-2026.git"
         BRANCH = "main"
 
-        HARBOR = "192.168.1.252"
+        HARBOR = "192.168.1.252:80"
         PROJECT = "test-cbncloud"
         IMAGE_NAME = "laravel-new-2026"
 
