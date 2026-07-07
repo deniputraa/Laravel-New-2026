@@ -21,7 +21,7 @@ spec:
 
   rules:
 
-  - host: laravel.test.cbncloud.co.id
+  - host: laravel.test.cbncloud.local
 
     http:
 
